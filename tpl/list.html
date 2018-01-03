@@ -1,0 +1,72 @@
+<div ng-include="'tpl/list_header.html'"></div>
+<ion-content>
+    <div id="list-banner">
+        <div class="list" id="list_logo">
+            <a class="item item-thumbnail-left">
+                <img src="imgs/{{shops.simg}}" alt="">
+                <div class="info">
+                    <h4>{{shops.name}}</h4>
+                    <p>
+                        <i></i>
+                        提示：1)亲们午高峰请提前下单哦，提前下单...
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div id="bc">
+            <h6>
+                <i></i>
+                已有1张满35减2代金券
+            </h6>
+            <p>
+                <i></i>
+                满25减10；满40减15；满60减20
+            </p>
+        </div>
+    </div>
+    <div class="row" id="list-btns">
+        <a class="col col-33 text-center" ng-click="">
+            <span>点菜<br/><i></i></span>
+        </a>
+        <a class="col col-33 text-center">
+            <span>评价（6703）<br/><i></i></span>
+        </a>
+        <a class="col col-33 text-center">
+            <span>商家<br/><i></i></span>
+        </a>
+    </div>
+
+    <div class="row" id="shoplist">
+        <div class="col col-20">
+            <ion-scroll scrollbar-y="false">
+                <div class="list">
+                    <div class="item" ng-repeat="tmp in classifies">
+                        <h6>{{tmp}}</h6>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+        <div class="col col-80">
+            <ion-scroll scrollbar-y="false">
+                <div class="list">
+                    <div class="item item-thumbnail-left" ng-repeat="tmp in dishList">
+                        <img ng-src="imgs/{{tmp.dimg}}" alt="" ng-click="list_jump(sid,tmp.did)"/>
+                        <div class="addBtn">
+                            <h4>{{tmp.name}}</h4>
+                            <p>{{tmp.intro}}</p>
+                            <p>月售{{tmp.month_sell}} 赞{{tmp.zan}}</p>
+                            <h3>{{tmp.price | currency:'¥'}}</h3>
+                            <div>
+                                <button ng-if="order[$index].count" ng-click="dec($index)">-</button>
+                                <span ng-if="order[$index].count">{{order[$index].count}}</span>
+                                <button ng-click="adds($index)"  ng-class="{true:'active',false:'normals'}[$index==focus]">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+    </div>
+</ion-content>
+<div ng-include="'tpl/footer1.html'"></div>
+

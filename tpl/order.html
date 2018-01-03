@@ -1,0 +1,61 @@
+<ion-header-bar>
+    <button class="button button-dark button-clear">订单</button>
+</ion-header-bar>
+<ion-tabs class="tabs-striped tabs-top">
+    <ion-tab title="全部订单">
+        <ion-view>
+            <ion-content id="all_orders">
+                <div class="list">
+                    <div class="item shop_name">
+                        <span class="item-note">订单已完成</span>
+                        <p>
+                            <i class="logo"></i> &nbsp;&nbsp;张亮麻辣烫（总部基地店）
+                            <i class="icon ion-ios-arrow-right"></i>
+                        </p>
+                    </div>
+                    <div class="item order_content">
+                        <p>
+                            <span>餐盒（需要几个点几个）</span>
+                            <i>×1</i>
+                        </p>
+                        <p>
+                            <span>餐盒（需要几个点几个）</span>
+                            <i>×1</i>
+                        </p>
+                        <p>
+                            <span>...</span>
+                            <i>共5件商品，实付 <span>¥27.4</span></i>
+                        </p>
+                    </div>
+                    <div class="item order_more">
+                        <p class="text-right">
+                            <button class="button button-outline button-light button-small">相似商家</button>
+                            <button class="button button-outline button-light button-small">再来一单</button>
+                        </p>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-view>
+    </ion-tab>
+    <ion-tab title="待评价">
+        <ion-view>
+            <ion-content class="unComment">
+                <div class="text-center">
+                    <img src="imgs/unfound.jpg" alt=""/>
+                    <p>还没有待评价的订单哦~</p>
+                </div>
+            </ion-content>
+        </ion-view>p
+    </ion-tab>
+    <ion-tab title="退款">
+        <ion-view>
+            <ion-content class="unComment">
+                <div class="text-center">
+                    <img src="imgs/unfound.jpg" alt=""/>
+                    <p>还没有退款的订单哦~</p>
+                </div>
+            </ion-content>
+        </ion-view>
+    </ion-tab>
+</ion-tabs>
+<div ng-include="'tpl/footer.html'"></div>

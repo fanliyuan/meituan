@@ -1,0 +1,151 @@
+<div ng-include="'tpl/start_header.html'"></div>
+<ion-content on-scroll="getScrollPosition()">
+    <ion-refresher on-refresh="load_more()"  spinner="android" >
+    </ion-refresher>
+   <ion-slide-box auto-play="true" slide-interval="2000" does-continue="true">
+       <ion-slide ng-repeat="tmp in imgData">
+           <div class="box banner">
+               <img ng-src="imgs/{{tmp}}" alt="" class="img-response"/>
+           </div>
+       </ion-slide>
+   </ion-slide-box>
+    <div id="nav">
+        <div class="row">
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/7.png" alt=""/>
+                    <h5>美食</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/1.png" alt=""/>
+                    <h5>美团超市</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/8.png" alt=""/>
+                    <h5>生鲜果蔬</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/3.png" alt=""/>
+                    <h5>甜点饮品</h5>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/5.png" alt=""/>
+                    <h5>正餐优选</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/4.png" alt=""/>
+                    <h5>美团转送</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/6.png" alt=""/>
+                    <h5>早餐</h5>
+                </a>
+            </div>
+            <div class="col col-25">
+                <a href="#">
+                    <img src="imgs/2.png" alt=""/>
+                    <h5>跑腿代购</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="favourable">
+        <div class="container">
+            <h4 class="text-center heading"><span>优惠专区</span></h4>
+            <div class="row" id="fav">
+                <a class="col col-50">
+                    <img src="imgs/fav1.jpg" alt="" class="img-response"/>
+                </a>
+                <a class="col col-50">
+                    <img src="imgs/fav2.jpg" alt="" class="img-response"/>
+                </a>
+            </div>
+            <div class="row" id="must-food">
+                <a class="col col-25">
+                    <h4>必吃</h4>
+                    <p>高性价比</p>
+                    <img src="imgs/best.png" alt="" class="img-response"/>
+                </a>
+                <a class="col col-25">
+                    <h4>品牌</h4>
+                    <p>披萨+汉堡</p>
+                    <img src="imgs/pp.png" alt="" class="img-response"/>
+                </a>
+                <a class="col col-25">
+                    <h4>大闸蟹</h4>
+                    <p>直减100元</p>
+                    <img src="imgs/fruit.png" alt="" class="img-response"/>
+                </a>
+                <a class="col col-25">
+                    <h4>超市</h4>
+                    <p>45元红包</p>
+                    <img src="imgs/market.png" alt="" class="img-response"/>
+                </a>
+            </div>
+            <div class="gaps"></div>
+            <div id="today">
+                <div class="cols-40">
+                    <a>
+                        <img src="imgs/td.png" alt="" class="img-response"/>
+                    </a>
+                </div>
+                <div class="cols-40">
+                    <img src="imgs/jk.png" alt="" class="img-response"/>
+                </div>
+                <div class="cols-20">
+                    <img src="imgs/sl.png" alt="" class="img-response"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="shops">
+        <h4 class="text-center">附近商家</h4>
+        <div class="row text-center">
+            <div class="col col-25">
+                <button class="button button-clear button-dark icon-right ion-ios-arrow-down button-small">综合排</button>
+            </div>
+            <div class="col col-25">
+                <button class="button button-clear button-dark button-small" ng-click="sort()">销量最高</button>
+            </div>
+            <div class="col col-25">
+                <button class="button button-clear button-dark button-small">距离最近</button>
+            </div>
+            <div class="col col-25">
+                <button class="button button-clear button-dark icon-right ion-funnel button-small">筛选</button>
+            </div>
+        </div>
+        <div class="list shop-list">
+            <a class="item item-thumbnail-left" ui-sref="list({id:tmp.sturn})" ng-repeat="tmp in shopdata | orderBy : expression : reverse">
+                <img ng-src="imgs/{{tmp.simg}}" alt="１"/>
+                <h4 class="clearfix">{{tmp.name}} <i class="icon ion-android-more-horizontal"></i></h4>
+                <p class="clearfix"><i></i>月售{{tmp.month_sell}}<span>30分钟|1.7km</span></p>
+                <div class="clearfix">
+                    <i class="icon ion-ios-arrow-down"></i>
+                    <h5>起送&nbsp;{{tmp.min_spend | currency:'¥'}}&nbsp; |&nbsp; 配送&nbsp;{{tmp.spend_delivery | currency:'¥'}}&nbsp; |&nbsp; 人均&nbsp;¥13</h5>
+                    <h6><i></i>{{tmp.dec_activity}}<span></span></h6>
+                    <h4><i></i>{{tmp.discount}}</h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</ion-content>
+<div id="cart_ball" class="text-center" ng-click="jump('cart')">
+    <i class="icon ion-ios-cart"></i>
+    <span>11</span>
+</div>
+<div ng-include="'tpl/footer.html'"></div>

@@ -1,0 +1,94 @@
+<ion-header-bar align-title="left" id="orderlist_header">
+    <button class="button button-clear button-dark icon-left ion-ios-arrow-thin-left"></button>
+    <h6 class="title">提交订单</h6>
+</ion-header-bar>
+<ion-content id="orderlist_content">
+    <div class="list list-inset address">
+        <div class="item">
+            <i class="icon ion-ios-plus"></i>
+            <span>选择收货地址</span>
+            <i class="item-note icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item">
+            <i class="icon ion-ios-clock"></i>
+            <span>立即送出 <i>大约19:22送达</i></span>
+            <i class="item-note icon ion-ios-arrow-right"></i>
+        </div>
+    </div>
+    <div class="list list-inset">
+        <div class="item item-avatar item-divider">
+            <img src="imgs/zl.jpg" alt=""/>
+            <span class="item-note">美团快送</span>
+            <h6>张亮麻辣烫（总部基地）</h6>
+        </div>
+        <div class="item item-thumbnail-left">
+            <img src="imgs/canhe.jpg" alt=""/>
+            <span class="item-note">¥1</span>
+            <h6>餐盒（需要几个点几个）</h6>
+            <p>×1</p>
+        </div>
+        <div class="item item-thumbnail-left">
+            <img src="imgs/canhe.jpg" alt=""/>
+            <span class="item-note">¥1</span>
+            <h6>餐盒（需要几个点几个）</h6>
+            <p>×1</p>
+        </div>
+        <div class="item click_show">
+            <p class="text-center"><span>点击展开 <i class="icon ion-ios-arrow-down"></i></span></p>
+            <span>配送费</span>
+            <span class="item-note">¥3</span>
+        </div>
+        <div class="item reduction">
+            <p>
+                <span><i></i>满减优惠</span>
+                <i>雪碧一瓶</i>
+            </p>
+            <p>
+                <span><i></i>满返商家代金券优惠</span>
+                <i>返2元商家券</i>
+            </p>
+            <p>
+                <span>美团红包</span>
+                <i>填写地址后可选</i>
+            </p>
+            <p>
+                <span>商家代金券</span>
+                <i>填写地址后可选</i>
+            </p>
+        </div>
+        <div class="item">
+            <h5 class="text-right">
+                <span>已优惠¥5.1</span>
+                小计
+                <i>¥93.7</i>
+            </h5>
+        </div>
+    </div>
+    <div class="list list-inset protect">
+            <ion-toggle toggle-class="toggle-energized">
+               <span><i class="icon ion-android-lock"></i> 隐私保护 <i class="icon ion-ios-help-outline"></i></span>
+                <p>对商家、骑手隐藏您的真实手机号码，保护您的隐私</p>
+            </ion-toggle>
+    </div>
+    <div class="list list-inset">
+        <div class="item pay_way">
+            <p>
+                <span>支付方式</span>
+                <i>在线支付</i>
+            </p>
+            <p>
+                <span>备注/发票</span>
+                <i>口味、偏好等要求 &nbsp;<i class="icon ion-ios-arrow-right"></i></i>
+            </p>
+        </div>
+    </div>
+    <p id="comment" class="text-right">
+        <i class="icon ion-ios-information-outline"></i>
+        不清楚优惠规则？
+    </p>
+</ion-content>
+<ion-footer-bar id="orderlist_footer">
+    <button class="button button-dark button-clear">已优惠¥5.1</button>
+    <p class="title">合计<span>¥93.7</span></p>
+    <a class="button button-energized button-large">提交订单</a>
+</ion-footer-bar>

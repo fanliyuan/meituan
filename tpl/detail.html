@@ -1,0 +1,31 @@
+<div ng-include="'tpl/detail_header.html'"></div>
+<ion-content id="detail_content">
+    <div class="banner">
+        <img src="imgs/{{detaildata.largeImg}}" alt="" class="full-image"/>
+    </div>
+    <div class="intro list">
+        <div class="item item1">
+            <h5>{{detaildata.name}}</h5>
+            <p>月售{{detaildata.month_sell}}</p>
+            <h3>{{detaildata.price | currency:'¥'}}<i></i></h3>
+        </div>
+        <div class="item item2">
+            <h5>商品信息</h5>
+            <h6>{{detaildata.intro}}</h6>
+        </div>
+    </div>
+    <div class="list comment">
+        <div class="item item1">
+            <i>外卖评价 <span>（好评度93%）</span></i>
+            <span class="item-note">3条评价 &gt;</span>
+        </div>
+        <div class="item item-avatar item-text-wrap item2">
+            <img src="imgs/comment.png" alt=""/>
+            <span class="item-note">2017.09.20</span>
+            <h4>XCq202055194</h4>
+            <p><i></i>攒了该商品</p>
+            <h5>雪碧放错了 点的是瓶装的 送来的是听的 娃娃菜 没有看到娃娃菜</h5>
+        </div>
+    </div>
+</ion-content>
+<div ng-include="'tpl/footer1.html'"></div>

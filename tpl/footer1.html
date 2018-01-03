@@ -1,0 +1,40 @@
+<ion-footer-bar align-title="right" class="bar-dark" id="list-footer">
+    <div class="cart" ng-class="{true:'active',false:'normals'}[isOrder]">
+        <button class="button button-clear icon-left ion-android-cart" ng-click="openPopover($event)" style="z-index:999">
+            <span class="badge badge-assertive" ng-if="isOrder">{{sums}}</span>
+        </button>
+    </div>
+    <h6 id="price" ng-if="isOrder">{{sumPrice | currency:'¥'}}</h6>
+    <h6 class="button button-clear button-small">另需配送费¥3</h6>
+    <div class="title">
+        <p ng-if="accounts" class="si" ng-click="jump('orderlist')"><span>结算</span></p>
+        <p ng-if="!accounts" style="padding-right:10px;">¥20起送</p>
+    </div>
+</ion-footer-bar>
+<script type="text/ng-template" id="my_popover.html">
+    <ion-popover-view>
+        <ion-content id="cart_list">
+            <div class="list">
+                <div class="item item-divider">
+                    <i>1号口袋</i>
+                    <span class="item-note"><i></i>清空购物车</span>
+                </div>
+                <div class="item">
+                    <span>海带扣</span>
+                    <span class="item-note">
+                        <i>¥2.7</i>
+                        <span class="price"><i class="icon ion-ios-minus-outline"></i><span>1</span><i class="icon ion-ios-plus"></i></span>
+                    </span>
+                </div>
+                <div class="item">
+                    <span>海带扣</span>
+                    <span class="item-note">
+                        <i>¥2.7</i>
+                        <span class="price"><i class="icon ion-ios-minus-outline"></i><span>1</span><i class="icon ion-ios-plus"></i></span>
+                    </span>
+                </div>
+
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>
